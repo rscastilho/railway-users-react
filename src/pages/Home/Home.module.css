@@ -1,0 +1,12 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 84vh;
+    max-height: 84vh;
+}
+
+.content div button{
+    text-align: center;
+    margin-top: 600px;
+    width: 220px;
+}
