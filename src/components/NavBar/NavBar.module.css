@@ -1,0 +1,13 @@
+.navBar{
+    border: 1px solid black;
+    min-height: 100px;
+    background-color: #190256;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 200;
+}
+.navBar div{
+    background-color: #190256;
+}

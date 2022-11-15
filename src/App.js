@@ -1,10 +1,20 @@
 import './App.css';
+import Login from './pages/Login/Login';
+import { BrowserRouter } from 'react-router-dom'
+import RoutesApp from './Router/RoutesApp';
+
 
 function App() {
   return (
-    <div>
-      rCastilho - JavaScript - WebAppDevelopment
-    </div>
+    <>
+      <BrowserRouter>
+      
+        {/* <Login/> */}
+          <RoutesApp/>
+        
+        
+      </BrowserRouter>
+    </>
   );
 }
 
