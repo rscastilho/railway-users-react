@@ -11,20 +11,16 @@
 .navBar div, .react{
     background-color: #190256;
 }
-
 .navBar div{
     margin: 0 15px 
 }
-
 .react{
     margin-right: 10px;
 }
-
 .link{ 
     text-decoration: none;
     background-color: #190256;
 }
-
 a{
     text-decoration: none;
 }

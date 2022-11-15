@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
   return (
     <nav className={`${styles.navBar}`}>
-
       <div>App.rCast <BiRegistered className={`${styles.react}`} /></div>
       <div>
         <Link to={'/'} className={`${styles.link}`}>
