@@ -20,7 +20,7 @@ const NavBar = () => {
           <SiMysql size={'3em'} color={'white'} className={`${styles.react}`} />
         </Link>
       </div>
-      <div>Login / Logout</div>
+      <div>.Login / Logout.</div>
     </nav>
   )
 }
