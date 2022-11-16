@@ -6,7 +6,6 @@ import { SiExpress, SiMysql } from 'react-icons/si'
 import { BiRegistered } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 
-
 const NavBar = () => {
   return (
     <nav className={`${styles.navBar}`}>
