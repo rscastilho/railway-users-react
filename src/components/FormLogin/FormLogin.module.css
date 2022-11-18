@@ -73,7 +73,6 @@ button {
 
 button:hover {
     padding: 8px;
-    /* border: 1; */
     border-color: #3f3fc0;
     margin: 5px;
     border-radius: 10px;
@@ -84,7 +83,6 @@ button:hover {
     cursor: pointer;
     animation-duration: .31s;
     animation-name: animate;
-    /* animation-delay: .2s; */
 }
 
 @keyframes animate {

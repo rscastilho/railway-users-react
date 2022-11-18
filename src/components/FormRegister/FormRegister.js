@@ -38,7 +38,10 @@ const FormRegister = () => {
                     <label>Password</label>
                     <input type="password" placeholder='Digite sua senha' />
                 </div>
-
+                <div className={`${styles.fields}`}>
+                    <label>Confirm Password</label>
+                    <input type="password" placeholder='Confirme sua senha' />
+                </div>
 
 
                 <div className={`${styles.buttons}`}>
