@@ -16,7 +16,7 @@ form {
     width: 100%;
 }
 
-.fields{
+.fields {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,10 +25,10 @@ form {
     width: inherit;
 }
 
-.fields label{
+.fields label {
     font-weight: 400;
     width: 20%;
-    
+
 }
 
 label {
@@ -73,7 +73,7 @@ button {
 
 button:hover {
     padding: 8px;
-    border: 1;
+    /* border: 1; */
     border-color: #3f3fc0;
     margin: 5px;
     border-radius: 10px;
@@ -82,4 +82,15 @@ button:hover {
     background-color: white;
     color: #3f3fc0;
     cursor: pointer;
+    animation-duration: .31s;
+    animation-name: animate;
+    /* animation-delay: .2s; */
+}
+
+@keyframes animate {
+    from{background-color: #3f3fc0; }
+    to{background-color: aliceblue;
+        color: black;
+        border: 0;
+    }
 }
