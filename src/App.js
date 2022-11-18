@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-          <RoutesApp/>
+        <RoutesApp />
       </BrowserRouter>
     </>
   );
