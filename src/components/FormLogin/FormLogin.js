@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import styles from './FormLogin.module.css'
 import { useNavigate } from 'react-router-dom'
 import LoginApi from '../../api/LoginApi'
-import Swal from 'sweetalert2'
+import { Toast } from '../Messages/ToastFormat';
+import toastMessage from '../Messages/toastMessage';
+import swalMessage from '../Messages/swalMessage';
 
 
 const FormLogin = () => {
@@ -10,47 +12,22 @@ const FormLogin = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
-
     const handleLogin = async (e) => {
         e.preventDefault()
         try {
             const result = await LoginApi({ email, password })
             if (result.token) {
+                navigate('/home')
                 localStorage.clear()
                 localStorage.setItem('@id', result.data[0].id)
                 localStorage.setItem('@name', result.data[0].name)
                 localStorage.setItem('@email', result.data[0].email)
                 localStorage.setItem('@token', result.token)
-                navigate('/home')
-                Toast.fire({
-                    icon: 'success',
-                    text: result.message
-                })
-
+                toastMessage('success', result.message)
             } else {
-                // Swal.fire({
-                //     title:'Erro ao tentar logar no sistema',
-                //     text: result.message,
-                //     icon:'error',
-                //     confirmButtonColor:'',
-                //     confirmButtonText:'OK', 
-                //     buttonsStyling:true
-                // })
-                Toast.fire({
-                    icon: 'warning',
-                    text: result.message
-                })
+
+                swalMessage('Erro ao processar informações', result.message, 'error')
+
                 localStorage.clear()
             }
         } catch (error) {
@@ -70,7 +47,7 @@ const FormLogin = () => {
 
     return (
         <div className={`${styles.container}`}>
-            <form>
+            <form className={styles.frm}>
                 <div className={`${styles.fields}`}>
                     <label> Email</label>
                     <input type="text"
@@ -88,8 +65,8 @@ const FormLogin = () => {
                     />
                 </div>
                 <div className={`${styles.buttons}`}>
-                    <button onClick={(e) => handleLogin(e)} disabled={!email || !password ? true : false}>Login</button>
-                    <button onClick={(e) => goToRegister(e)}>Register</button>
+                    <button className={styles.btn} onClick={(e) => handleLogin(e)} disabled={!email || !password ? true : false}>Login</button>
+                    <button className={styles.btn} onClick={(e) => goToRegister(e)}>Register</button>
                 </div>
             </form>
         </div>

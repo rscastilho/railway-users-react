@@ -7,7 +7,7 @@
     background-color: white;
 }
 
-form {
+.frm {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@ input {
     background-color: white;
 }
 
-button {
+.btn{
     padding: 8px;
     border: 1;
     border-color: #3f3fc0;
@@ -71,7 +71,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
     padding: 8px;
     border-color: #3f3fc0;
     margin: 5px;

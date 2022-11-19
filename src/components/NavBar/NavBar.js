@@ -6,7 +6,8 @@ import { BiRegistered, BiKey } from 'react-icons/bi'
 import { CiLogout } from 'react-icons/ci'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/UserContext'
-import { Toast } from './../Toast/Toast';
+// import { Toast } from './../Toast/Toast';
+import { Toast } from './../Messages/ToastFormat';
 
 
 const NavBar = () => {
