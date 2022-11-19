@@ -26,7 +26,7 @@ const FormLogin = () => {
         e.preventDefault()
         try {
             const result = await LoginApi({ email, password })
-            if (result.token) {
+            if (result.data.token) {
                 localStorage.clear()
                 localStorage.setItem('@id', result.data[0].id)
                 localStorage.setItem('@name', result.data[0].name)
