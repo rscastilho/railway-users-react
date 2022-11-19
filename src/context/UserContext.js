@@ -24,8 +24,6 @@ export const UserContextProvider = ({ children }) => {
         <>
             <AuthContext.Provider value={{ authenticate, setAuthenticate }}>
                 {children}
-        {console.log(authenticate)}
-                
             </AuthContext.Provider>
 
         </>

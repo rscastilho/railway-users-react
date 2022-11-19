@@ -31,7 +31,7 @@ const NavBar = () => {
     <nav className={`${styles.navBar}`}>
       <div>App.rCast <BiRegistered className={`${styles.react}`} /></div>
       <div>
-        <Link to={'/'} className={`${styles.link}`}>
+        <Link to={'/about'} className={`${styles.link}`}>
           <FaReact size={'3em'} color={'blue'} className={`${styles.react}`} />
           <FaNodeJs size={'3em'} color={'green'} className={`${styles.react}`} />
           <SiJavascript size={'3em'} color={'yellow'} className={`${styles.react}`} />
