@@ -11,31 +11,39 @@ const FormLogin = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [isloading, setIsLoading] = useState(false);
 
     const handleLogin = async (e) => {
         e.preventDefault()
         try {
+            setIsLoading(true)
             const result = await LoginApi({ email, password })
             if (result.token) {
-                navigate('/home')
                 localStorage.clear()
                 localStorage.setItem('@id', result.data[0].id)
                 localStorage.setItem('@name', result.data[0].name)
                 localStorage.setItem('@email', result.data[0].email)
                 localStorage.setItem('@token', result.token)
                 toastMessage('success', result.message)
+                setIsLoading(false)
+                navigate('/home')
             } else {
+                setIsLoading(true)
 
                 swalMessage('Erro ao processar informações', result.message, 'error')
 
                 localStorage.clear()
+                setIsLoading(false)
+
             }
         } catch (error) {
+            setIsLoading(true)
             console.log(error)
             Toast.fire({
                 icon: 'error',
                 text: error.message
             })
+            setIsLoading(false)
             localStorage.clear()
         }
     }
@@ -65,8 +73,21 @@ const FormLogin = () => {
                     />
                 </div>
                 <div className={`${styles.buttons}`}>
-                    <button className={styles.btn} onClick={(e) => handleLogin(e)} disabled={!email || !password ? true : false}>Login</button>
-                    <button className={styles.btn} onClick={(e) => goToRegister(e)}>Register</button>
+                    <button
+                        className={styles.btn}
+                        onClick={(e) => handleLogin(e)}
+                        disabled={!email || !password ? true : false}
+                        style={{ width: `${isloading ? '100%' : ''}` }}
+                    >
+                        {isloading ? 'carregando' : 'Login'}
+                    </button>
+                    <button
+                        className={styles.btn}
+                        onClick={(e) => goToRegister(e)}
+                        style={{ display: `${isloading ? 'none' : ''}` }}
+                    >
+                        Register
+                    </button>
                 </div>
             </form>
         </div>
