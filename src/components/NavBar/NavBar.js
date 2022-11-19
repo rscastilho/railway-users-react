@@ -16,6 +16,7 @@ const NavBar = () => {
     try {
       localStorage.clear()
       navigate('/')
+      
 
     } catch (error) {
       return error
