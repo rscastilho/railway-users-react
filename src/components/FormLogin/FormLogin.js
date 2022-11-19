@@ -33,6 +33,10 @@ const FormLogin = () => {
                 localStorage.setItem('@email', result.data[0].email)
                 localStorage.setItem('@token', result.token)
                 navigate('/home')
+                Toast.fire({
+                    icon: 'success',
+                    text: result.message
+                })
 
             } else {
                 // Swal.fire({
