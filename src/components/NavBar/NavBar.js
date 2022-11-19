@@ -3,9 +3,10 @@ import styles from './NavBar.module.css'
 import { FaReact, FaNodeJs } from 'react-icons/fa'
 import { SiExpress, SiMysql, SiJavascript } from 'react-icons/si'
 import { BiRegistered, BiKey } from 'react-icons/bi'
-import { CiLogout} from 'react-icons/ci'
+import { CiLogout } from 'react-icons/ci'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/UserContext'
+import { Toast } from './../Toast/Toast';
 
 
 const NavBar = () => {
@@ -15,14 +16,15 @@ const NavBar = () => {
   const handleLogout = () => {
     try {
       localStorage.clear()
+      Toast.fire({
+        icon: 'success',
+        text: 'Logout realizado com sucesso!'
+      })
       navigate('/')
-      
-
     } catch (error) {
       return error
     }
   }
-
 
   return (
     <nav className={`${styles.navBar}`}>
