@@ -6,7 +6,7 @@ const LoginApi = async (dataLogin) => {
         console.log('resultado api',result)
         return result
     } catch (error) {
-        return error.response.data
+        return error.response
     }
 }
 
