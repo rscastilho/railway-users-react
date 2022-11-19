@@ -77,9 +77,14 @@ const FormLogin = () => {
                         className={styles.btn}
                         onClick={(e) => handleLogin(e)}
                         disabled={!email || !password ? true : false}
-                        style={{ width: `${isloading ? '100%' : ''}` }}
+                        style={{ width: `${isloading ? '100%' : ''}`, 
+                                backgroundColor:`${isloading ? 'orange' : ''}`, 
+                                color:`${isloading ? 'black' : ''}`,
+                                border: `${isloading ? 0 : ''}`
+                                
+                            }}
                     >
-                        {isloading ? 'carregando' : 'Login'}
+                        {isloading ? 'carregando...' : 'Login'}
                     </button>
                     <button
                         className={styles.btn}
