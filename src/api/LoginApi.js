@@ -5,7 +5,7 @@ const LoginApi = async (dataLogin) => {
         const result = await webApi.post('/login', dataLogin)
         return result.data
     } catch (error) {
-        return error.response
+        return error.response.data
     }
 }
 
