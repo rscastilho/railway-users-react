@@ -27,11 +27,11 @@ const FormLogin = () => {
         try {
             const result = await LoginApi({ email, password })
             if (result.token) {
-                localStorage.clear()
-                localStorage.setItem('@id', result.data[0].id)
-                localStorage.setItem('@name', result.data[0].name)
-                localStorage.setItem('@email', result.data[0].email)
-                localStorage.setItem('@token', result.token)
+                // localStorage.clear()
+                // localStorage.setItem('@id', result.data[0].id)
+                // localStorage.setItem('@name', result.data[0].name)
+                // localStorage.setItem('@email', result.data[0].email)
+                // localStorage.setItem('@token', result.token)
                 navigate('/home')
                 Toast.fire({
                     icon: 'success',
@@ -54,7 +54,7 @@ const FormLogin = () => {
                 localStorage.clear()
             }
         } catch (error) {
-            console.log(error.message)
+            console.log(error)
             Toast.fire({
                 icon: 'error',
                 text: error.message
