@@ -116,18 +116,19 @@ input {
     
     .fields {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: left;
-        align-items: center;
+        align-items: flex-start;
         background-color: white;
         width: inherit;
-        
+                
     }
     
     .fields label {
         font-weight: 400;
         width: 20%;
         font-size: .8em;
+        height: 10px;
     
     }
     
@@ -135,7 +136,7 @@ input {
         display: flex;
         flex-direction: row;
         background-color: white;
-        font-weight: 100;
+        font-weight: 300;
         text-align: left;
                
     
@@ -149,7 +150,7 @@ input {
         font-size: .8em;
         margin: 2px 2px;
         background-color: white;
-        height: 30px;
+        height: 25px;
     }
     
     .buttons {

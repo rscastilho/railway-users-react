@@ -50,6 +50,7 @@ const FormLogin = () => {
 
     const goToRegister = (e) => {
         e.preventDefault()
+        navigate('/register')
     }
 
 
