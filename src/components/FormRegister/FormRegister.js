@@ -25,19 +25,20 @@ const FormRegister = () => {
                     swalMessage(result.response.data.message, 'Erro ao tentar cadastrar usuário', 'error')
                     setIsLoading(false)
                     return
-                } else {
-                    if (result.status === 200) {
-                        setIsLoading(true)
-                        toatMessage('success', result.data.message)
-                        setIsLoading(false)
-                        navigate('/')
-                        return
-                    }
+                }
+            } else {
+                if (result.status === 200) {
+                    toatMessage('success', result.data.message)
+                    setIsLoading(false)
+                    navigate('/')
+                    return
                 }
             }
+            setIsLoading(false)
         }
         catch (error) {
             console.log(error)
+            return
         }
     }
 

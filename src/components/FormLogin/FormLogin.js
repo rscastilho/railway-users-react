@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from './FormLogin.module.css'
 import { useNavigate } from 'react-router-dom'
 import LoginApi from '../../api/LoginApi'
 import { Toast } from '../Messages/ToastFormat';
 import toastMessage from '../Messages/toastMessage';
 import swalMessage from '../Messages/swalMessage';
+import { AuthContext } from '../../context/UserContext';
+
 
 
 const FormLogin = () => {
+    const { setAuthenticate } = useContext(AuthContext)
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -25,6 +28,7 @@ const FormLogin = () => {
                 localStorage.setItem('@email', result.data[0].email)
                 localStorage.setItem('@token', result.token)
                 toastMessage('success', result.message)
+                setAuthenticate(true)
                 setIsLoading(false)
                 navigate('/home')
             } else {
@@ -78,12 +82,13 @@ const FormLogin = () => {
                         className={styles.btn}
                         onClick={(e) => handleLogin(e)}
                         disabled={!email || !password ? true : false}
-                        style={{ width: `${isloading ? '100%' : ''}`, 
-                                backgroundColor:`${isloading ? 'orange' : ''}`, 
-                                color:`${isloading ? 'black' : ''}`,
-                                border: `${isloading ? 0 : ''}`
-                                
-                            }}
+                        style={{
+                            width: `${isloading ? '100%' : ''}`,
+                            backgroundColor: `${isloading ? 'orange' : ''}`,
+                            color: `${isloading ? 'black' : ''}`,
+                            border: `${isloading ? 0 : ''}`
+
+                        }}
                     >
                         {isloading ? 'carregando...' : 'Login'}
                     </button>

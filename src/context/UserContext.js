@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from 'react'
+import { createContext, useEffect, useMemo, useState } from 'react'
 import webApi from '../api/webApi';
 
 
@@ -17,9 +17,14 @@ export const UserContextProvider = ({ children }) => {
             localStorage.clear()
         }
     }, [])
-    
-    
-    
+
+
+
+    useEffect(() => {
+        setAuthenticate(true)
+    }, [localStorage.getItem('@token')])
+
+
     return (
         <>
             <AuthContext.Provider value={{ authenticate, setAuthenticate }}>

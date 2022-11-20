@@ -12,16 +12,18 @@ import { Toast } from './../Messages/ToastFormat';
 
 const NavBar = () => {
   const navigate = useNavigate()
-  const { authenticate } = useContext(AuthContext)
+  const { authenticate, setAuthenticate } = useContext(AuthContext)
 
   const handleLogout = () => {
     try {
-      localStorage.clear()
+      setAuthenticate(false)
       Toast.fire({
         icon: 'success',
         text: 'Logout realizado com sucesso!'
       })
+      localStorage.clear()
       navigate('/')
+      return
     } catch (error) {
       return error
     }
