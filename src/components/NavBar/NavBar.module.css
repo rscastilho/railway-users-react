@@ -24,3 +24,16 @@
 a{
     text-decoration: none;
 }
+
+@media screen and (max-width:500px) {
+  .nome{
+    display: none;
+  }
+
+  .react{
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+}

@@ -29,7 +29,7 @@ const NavBar = () => {
 
   return (
     <nav className={`${styles.navBar}`}>
-      <div>App.rCast <BiRegistered className={`${styles.react}`} /></div>
+      <div className={`${styles.nome}`}>App.rCast <BiRegistered className={`${styles.react}`} /></div>
       <div>
         <Link to={'/about'} className={`${styles.link}`}>
           <FaReact size={'3em'} color={'blue'} className={`${styles.react}`} />

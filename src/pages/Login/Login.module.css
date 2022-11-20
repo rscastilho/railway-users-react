@@ -23,3 +23,31 @@
     z-index: 10;
 }
 
+@media screen and (max-width:500px) {
+    .container{
+        background-color: white;
+        margin: 5% auto;
+        min-height: 25em;
+        max-width: 100%;
+        /* border-radius: 30px; */
+        box-shadow: 0 15px 50px -12px rgba(103, 95, 171, 0.25);
+        padding: 2em;
+    }
+    
+    .avatar{
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+        
+    }
+    
+    .icon{
+        background-color: white;
+        color: rgb(32, 12, 140);
+        z-index: 10;
+    }
+
+}

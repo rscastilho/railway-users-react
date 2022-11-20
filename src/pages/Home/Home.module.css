@@ -10,3 +10,14 @@
     margin-top: 600px;
     width: 220px;
 }
+
+@media screen and (max-width:500px) {
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        max-height: 80vh;
+        
+    }
+}
