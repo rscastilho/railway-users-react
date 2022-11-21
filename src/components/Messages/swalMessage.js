@@ -3,8 +3,8 @@ import Swal from 'sweetalert2';
 
 const swalMessage = (title, text, icon)=>{
     Swal.fire({
-                   title: title,
-                   text: text,
+                   title: text,
+                   text: title,
                    icon: icon,
                    confirmButtonColor:'orange',
                    confirmButtonText:' According! ' , 

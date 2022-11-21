@@ -33,12 +33,9 @@ const FormLogin = () => {
                 navigate('/home')
             } else {
                 setIsLoading(true)
-
-                swalMessage('Erro ao processar informações', result.message, 'error')
-
+                swalMessage('Erro ao processar informações!', result.message, 'error')
                 localStorage.clear()
                 setIsLoading(false)
-
             }
         } catch (error) {
             setIsLoading(true)

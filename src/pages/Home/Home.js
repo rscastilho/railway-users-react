@@ -9,7 +9,9 @@ const Home = () => {
     <div>
       <NavBar />
       <div className={`${styles.content}`}>
-        <div>
+        <div>  
+          {localStorage.getItem("@name")} <br />
+          {localStorage.getItem("@email")}
         </div>
       </div>
       <Footer />
