@@ -5,15 +5,15 @@ import { UserContextProvider } from './context/UserContext';
 
 
 function App() {
-  return (
-    <>
-      <UserContextProvider>
-        <BrowserRouter>
-          <RoutesApp />
-        </BrowserRouter>
-      </UserContextProvider>
-    </>
-  );
+    return (
+        <>
+            <UserContextProvider>
+                <BrowserRouter>
+                    <RoutesApp />
+                </BrowserRouter>
+            </UserContextProvider>
+        </>
+    );
 }
 
 export default App;

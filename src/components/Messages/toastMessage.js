@@ -1,14 +1,10 @@
-
 import { Toast } from './ToastFormat';
-
 
 const toatMessage = (icone, text) => {
     Toast.fire({
         icon: icone,
-        text: text
-    })
+        text: text,
+    });
+};
 
-}
-
-export default toatMessage
-
+export default toatMessage;
