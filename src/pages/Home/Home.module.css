@@ -19,9 +19,10 @@
 
 
 }
-.userItem{
+
+.userItem {
     display: flex;
-    justify-content:left;
+    justify-content: left;
     /* align-items: center; */
     flex-direction: column;
     text-align: left;
@@ -37,7 +38,8 @@ li {
     margin-right: 5px;
     text-transform: capitalize;
 }
-.contentUser{
+
+.contentUser {
     color: rgb(68, 68, 189);
 }
 
@@ -59,4 +61,40 @@ hr {
         font-size: 1em;
 
     }
+
+
+
+.content div {
+    font-size: .9em;
+    margin-bottom: 5px;
+
+
+}
+
+.userItem {
+    display: flex;
+    justify-content: left;
+    /* align-items: center; */
+    flex-direction: column;
+    text-align: left;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
+.label {
+    font-weight: 800;
+    margin-right: 5px;
+    text-transform: capitalize;
+}
+
+.contentUser {
+    color: rgb(68, 68, 189);
+}
+
+hr {
+    margin-top: 10px;
+}
 }
