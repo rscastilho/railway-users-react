@@ -7,15 +7,42 @@
     align-items: center;
 }
 
-.content div button{
+.content div button {
     text-align: center;
     margin-top: 600px;
     width: 220px;
 }
 
-.content div{
-    font-size: 1.5em;
+.content div {
+    font-size: 1em;
+    margin-bottom: 5px;
 
+
+}
+.userItem{
+    display: flex;
+    justify-content:left;
+    /* align-items: center; */
+    flex-direction: column;
+    text-align: left;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
+.label {
+    font-weight: 800;
+    margin-right: 5px;
+    text-transform: capitalize;
+}
+.contentUser{
+    color: rgb(68, 68, 189);
+}
+
+hr {
+    margin-top: 10px;
 }
 
 @media screen and (max-width:500px) {
@@ -25,11 +52,11 @@
         flex-direction: column;
         min-height: 80vh;
         max-height: 80vh;
-        
+
     }
 
-    .content div{
+    .content div {
         font-size: 1em;
-        
+
     }
 }
